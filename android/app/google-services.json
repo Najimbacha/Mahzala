@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "145038263169",
+    "project_id": "mahzala3",
+    "storage_bucket": "mahzala3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145038263169:android:0c447eacf8f7a01c4b9e80",
+        "android_client_info": {
+          "package_name": "com.najimbacha.mahzalaaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145038263169-btm8vpld1j4logscrbu2m2pr1obcqgu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqE5YOARi5rZBlhuameDeIUHH0Q_w0DFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145038263169-btm8vpld1j4logscrbu2m2pr1obcqgu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

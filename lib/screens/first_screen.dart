@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mahzalaaa/widgets/poet_avatar.dart';
+import 'package:mahzalaaa/widgets/tappy_widgets.dart';
 import 'package:mahzalaaa/utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -24,13 +28,14 @@ class _FirstScreenState extends State<FirstScreen> {
                 children: [
                   CarouselSlider(
                     items: [
-                      //1st Image of Slider
+                      // CardOfTheDay(Image: AssetImage('assets/boy.png')),
+                      // 1st Image of Slider
                       Container(
                         margin: const EdgeInsets.all(6.0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
-                            image: AssetImage('assets/boy.png'),
+                            image: AssetImage('assets/a.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -42,7 +47,7 @@ class _FirstScreenState extends State<FirstScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
-                            image: AssetImage('assets/Mahzala.png'),
+                            image: AssetImage('assets/b.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -54,19 +59,17 @@ class _FirstScreenState extends State<FirstScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
-                            image: AssetImage('assets/ceo.png'),
+                            image: AssetImage('assets/c.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
-
-                      //4th Image of Slider
                       Container(
                         margin: const EdgeInsets.all(6.0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
-                            image: AssetImage('assets/poerty.png'),
+                            image: AssetImage('assets/d.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -99,12 +102,15 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
             ],
           ),
+          SizedBox(
+            height: 10,
+          ),
           Container(
-            height: 100,
+            height: 80,
             width: double.infinity,
-            color: Colors.grey[800],
+            color: Colors.black54,
             child: Padding(
-              padding: const EdgeInsets.only(top: 50, left: 2),
+              padding: const EdgeInsets.only(top: 53, left: 8),
               child: Text(
                 "Trending Sher",
                 style: GoogleFonts.poppins(
@@ -114,90 +120,70 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
             ),
           ),
-          const Divider(),
           SizedBox(
-            height: 150,
-            width: double.infinity,
-            child: Card(
-              color: Colors.blueGrey,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: CarouselSlider(
-                items: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                        image: AssetImage('assets/mahzalaa.png'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1495312040802-a929cd14a6ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ],
-                options: CarouselOptions(
-                  autoPlay: false,
-                  enableInfiniteScroll: true,
-                  viewportFraction: 1,
+            height: 15,
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 130,
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(
+                            'assets/backf.png',
+                          ),
+                          fit: BoxFit.cover)),
+                  child: TappyCard(),
                 ),
               ),
-            ),
+            ],
           ),
           const Divider(
+            height: 30,
             color: Colors.white,
           ),
           SizedBox(
-            height: 40,
+            height: 33,
             width: double.infinity,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 120),
+                  padding: EdgeInsets.only(left: 130),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.linked_camera),
+                  icon: const Icon(
+                    Icons.share,
+                    size: 18,
+                  ),
                 ),
+                Text('|'),
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.share),
+                  icon: const Icon(
+                    Icons.favorite_border_outlined,
+                    size: 18,
+                  ),
                 ),
+                Text('|'),
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.favorite),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.arrow_circle_left_outlined),
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                  ),
                 ),
                 const Text(
-                  'Next',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  'Swipe',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.arrow_circle_right),
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                  ),
                 ),
               ],
             ),
@@ -211,37 +197,41 @@ class _FirstScreenState extends State<FirstScreen> {
               const SizedBox(
                 height: 45,
               ),
-              const Text(
-                'Most-Read Poets',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: const Text(
+                  'Most-Read Poets',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
               ),
               const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  CircleAvatar(
-                    radius: 35,
-                    backgroundImage: NetworkImage(
-                      'https://th.bing.com/th/id/OIP.Shq6MxCLFq_TO1x1KxVD7wHaFj?pid=ImgDet&rs=1',
-                    ),
-                  ),
-                  CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        'https://th.bing.com/th/id/R.cdf2a1a39054d97f5c0579e8d6efa514?rik=nziMkwadtq%2bJKQ&pid=ImgRaw&r=0',
-                      ),
-                      radius: 35),
-                  CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        'https://th.bing.com/th/id/R.d68771f08d100200dab2f6c4a0241689?rik=Py%2bSt6TESOpPdA&pid=ImgRaw&r=0&sres=1&sresct=1',
-                      ),
-                      radius: 35),
-                  CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        'https://th.bing.com/th/id/R.7c7b8e11b7fc28982b73bda95572f471?rik=7Q5mXkRjriSm4w&pid=ImgRaw&r=0',
-                      ),
-                      radius: 35),
-                ],
-              ),
+              PoetAvatar(),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: const [
+              //     CircleAvatar(
+              //       radius: 35,
+              //       backgroundImage: NetworkImage(
+              //         'https://th.bing.com/th/id/OIP.Shq6MxCLFq_TO1x1KxVD7wHaFj?pid=ImgDet&rs=1',
+              //       ),
+              //     ),
+              //     CircleAvatar(
+              //         backgroundImage: NetworkImage(
+              //           'https://th.bing.com/th/id/R.cdf2a1a39054d97f5c0579e8d6efa514?rik=nziMkwadtq%2bJKQ&pid=ImgRaw&r=0',
+              //         ),
+              //         radius: 35),
+              //     CircleAvatar(
+              //         backgroundImage: NetworkImage(
+              //           'https://th.bing.com/th/id/R.d68771f08d100200dab2f6c4a0241689?rik=Py%2bSt6TESOpPdA&pid=ImgRaw&r=0&sres=1&sresct=1',
+              //         ),
+              //         radius: 35),
+              //     CircleAvatar(
+              //         backgroundImage: NetworkImage(
+              //           'https://th.bing.com/th/id/R.7c7b8e11b7fc28982b73bda95572f471?rik=7Q5mXkRjriSm4w&pid=ImgRaw&r=0',
+              //         ),
+              //         radius: 35),
+              //   ],
+              // ),
             ],
           ),
         ],
